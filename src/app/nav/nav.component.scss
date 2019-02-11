@@ -1,0 +1,20 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+mat-tree-node a {
+  text-decoration: none
+}
+mat-tree-node a:visited {
+  color: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
