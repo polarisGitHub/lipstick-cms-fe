@@ -5,6 +5,8 @@ import {CategoryComponent} from './category/category.component';
 import {GoodsComponent} from './goods/goods.component';
 import {SkuComponent} from './sku/sku.component';
 import {RouterModule} from '@angular/router';
+import {MatInputModule, MatPaginatorModule, MatTableModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,10 @@ import {RouterModule} from '@angular/router';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatInputModule,
     RouterModule.forChild([
       {path: 'brand', component: BrandComponent},
       {path: 'category', component: CategoryComponent},

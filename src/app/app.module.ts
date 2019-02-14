@@ -4,9 +4,17 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NavComponent} from './nav/nav.component';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatPaginatorIntl,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatTreeModule
+} from '@angular/material';
+import {CustomPaginator} from './common/CustomPaginator';
 import {LayoutModule} from '@angular/cdk/layout';
-import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTreeModule} from '@angular/material';
+import {NavComponent} from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -17,15 +25,21 @@ import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatL
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    //////////
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule,
     MatTreeModule,
+    ///////////
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useClass: CustomPaginator
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

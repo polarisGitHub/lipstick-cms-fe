@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material';
 
 @Component({
   selector: 'app-sku',
   templateUrl: './sku.component.html',
   styleUrls: ['./sku.component.scss']
 })
-export class SkuComponent implements OnInit {
+export class SkuComponent implements AfterViewInit {
 
-  constructor() { }
+  formControl: string;
+  displayedColumns: string[] = [];
 
-  ngOnInit() {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  constructor() {
   }
 
+  ngAfterViewInit(): void {
+  }
 }
+
+
+
