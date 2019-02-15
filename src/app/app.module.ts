@@ -5,7 +5,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule,
+  MAT_LABEL_GLOBAL_OPTIONS,
+  MatButtonModule, MatDividerModule,
   MatIconModule,
   MatPaginatorIntl,
   MatSidenavModule,
@@ -32,13 +33,12 @@ import {NavComponent} from './nav/nav.component';
     MatSidenavModule,
     MatIconModule,
     MatTreeModule,
+    MatDividerModule,
     ///////////
   ],
   providers: [
-    {
-      provide: MatPaginatorIntl,
-      useClass: CustomPaginator
-    }
+    {provide: MatPaginatorIntl, useClass: CustomPaginator},
+    // {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
   ],
   bootstrap: [AppComponent]
 })

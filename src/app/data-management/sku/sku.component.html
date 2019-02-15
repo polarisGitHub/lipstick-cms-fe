@@ -1,10 +1,26 @@
 <form>
-  <mat-form-field >
-    <input matInput placeholder="sku code" ([[ngModel]])="formControl"/>
-  </mat-form-field>
+  <mat-grid-list cols="12" rowHeight="72px">
+    <mat-grid-tile class="grid-content-flex-start" colspan="2">
+      <mat-form-field appearance="fill">
+        <mat-label>编码</mat-label>
+        <input name="sku-code" matInput/>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile class="grid-content-flex-start" colspan="2">
+      <mat-form-field appearance="fill">
+        <mat-label>名称</mat-label>
+        <input name="name" matInput/>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile class="grid-content-flex-start" colspan="1">
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
 </form>
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="datasource">
+<div>
+  <table mat-table [dataSource]="">
 
     <!-- Position Column -->
     <ng-container matColumnDef="position">

@@ -16,10 +16,14 @@
     </mat-tree>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <span>运营后台</span>
-    </mat-toolbar>
-    <div style="margin: 24px">
+    <mat-toolbar></mat-toolbar>
+    <mat-divider></mat-divider>
+    <div class="margin">
+      <h4>test / 1 / 2</h4>
+      <h2>运营后台</h2>
+    </div>
+
+    <div class="margin padding" style="height:100%;background-color: white">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

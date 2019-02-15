@@ -10,6 +10,7 @@ mat-tree-node a {
   color: inherit;
   text-decoration: none
 }
+
 mat-tree-node a:visited {
   color: inherit;
 }
@@ -18,4 +19,12 @@ mat-tree-node a:visited {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.margin {
+  margin: 24px;
+}
+
+.padding {
+  padding: 24px;
 }
