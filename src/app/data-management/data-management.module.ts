@@ -5,7 +5,15 @@ import {CategoryComponent} from './category/category.component';
 import {GoodsComponent} from './goods/goods.component';
 import {SkuListComponent} from './sku/list/sku-list.component';
 import {RouterModule} from '@angular/router';
-import {MatButtonModule, MatGridListModule, MatIconModule, MatInputModule, MatPaginatorModule, MatTableModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatPaginatorModule,
+  MatSelectModule,
+  MatTableModule
+} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {SkuDetailComponent} from './sku/detail/sku-detail.component';
 
@@ -26,6 +34,7 @@ import {SkuDetailComponent} from './sku/detail/sku-detail.component';
     MatTableModule,
     MatInputModule,
     MatIconModule,
+    MatSelectModule,
     RouterModule.forChild([
       {path: 'brand', component: BrandComponent},
       {path: 'category', component: CategoryComponent},

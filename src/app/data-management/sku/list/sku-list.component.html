@@ -3,19 +3,24 @@
     <mat-grid-tile class="grid-content-flex-start" colspan="2">
       <mat-form-field appearance="fill">
         <mat-label>品牌</mat-label>
-        <input name="brandCode" matInput/>
+        <mat-select [(ngModel)]="searchParam.brandCode" name="brandCode">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let brand of brands$ | async" [value]="brand.code">
+            {{brand.name}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile class="grid-content-flex-start" colspan="2">
       <mat-form-field appearance="fill">
         <mat-label>编码</mat-label>
-        <input name="skuCode" matInput/>
+        <input [(ngModel)]="searchParam.skuCode" name="skuCode" matInput/>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile class="grid-content-flex-start" colspan="2">
       <mat-form-field appearance="fill">
         <mat-label>名称</mat-label>
-        <input name="skuName" matInput/>
+        <input [(ngModel)]="searchParam.skuName" name="skuName" matInput/>
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile class="grid-content-flex-start" colspan="1">
@@ -54,7 +59,6 @@
 
   <mat-paginator #paginator
                  [length]="totalCount"
-                 [pageIndex]="1"
                  [pageSizeOptions]="pageSizeOption"
                  showFirstLastButtons
   ></mat-paginator>
