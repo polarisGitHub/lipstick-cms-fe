@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SkuComponent } from './sku.component';
+import { SkuDetailComponent } from './sku-detail.component';
 
-describe('SkuComponent', () => {
-  let component: SkuComponent;
-  let fixture: ComponentFixture<SkuComponent>;
+describe('SkuDetailComponent', () => {
+  let component: SkuDetailComponent;
+  let fixture: ComponentFixture<SkuDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SkuComponent ]
+      declarations: [ SkuDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SkuComponent);
+    fixture = TestBed.createComponent(SkuDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

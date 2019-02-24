@@ -16,6 +16,8 @@ import {
 import {CustomPaginator} from './common/CustomPaginator';
 import {LayoutModule} from '@angular/cdk/layout';
 import {NavComponent} from './nav/nav.component';
+import {httpInterceptorProviders} from './http-interceptor/interceptor-providers';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import {NavComponent} from './nav/nav.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     //////////
     LayoutModule,
     MatToolbarModule,
@@ -38,6 +41,7 @@ import {NavComponent} from './nav/nav.component';
   ],
   providers: [
     {provide: MatPaginatorIntl, useClass: CustomPaginator},
+    httpInterceptorProviders,
     // {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
   ],
   bootstrap: [AppComponent]

@@ -3,17 +3,19 @@ import {CommonModule} from '@angular/common';
 import {BrandComponent} from './brand/brand.component';
 import {CategoryComponent} from './category/category.component';
 import {GoodsComponent} from './goods/goods.component';
-import {SkuComponent} from './sku/sku.component';
+import {SkuListComponent} from './sku/list/sku-list.component';
 import {RouterModule} from '@angular/router';
 import {MatButtonModule, MatGridListModule, MatIconModule, MatInputModule, MatPaginatorModule, MatTableModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import {SkuDetailComponent} from './sku/detail/sku-detail.component';
 
 @NgModule({
   declarations: [
     BrandComponent,
     CategoryComponent,
     GoodsComponent,
-    SkuComponent,
+    SkuListComponent,
+    SkuDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import {FormsModule} from '@angular/forms';
       {path: 'brand', component: BrandComponent},
       {path: 'category', component: CategoryComponent},
       {path: 'goods', component: GoodsComponent},
-      {path: 'sku', component: SkuComponent},
+      {path: 'sku', component: SkuListComponent},
+      {path: 'sku/:id', component: SkuDetailComponent},
     ])
   ]
 })
