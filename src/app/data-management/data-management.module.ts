@@ -6,7 +6,7 @@ import {GoodsComponent} from './goods/goods.component';
 import {SkuListComponent} from './sku/list/sku-list.component';
 import {RouterModule} from '@angular/router';
 import {
-  MatButtonModule,
+  MatButtonModule, MatCardModule, MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
   MatInputModule,
@@ -35,6 +35,7 @@ import {SkuDetailComponent} from './sku/detail/sku-detail.component';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
+    MatCardModule,
     RouterModule.forChild([
       {path: 'brand', component: BrandComponent},
       {path: 'category', component: CategoryComponent},

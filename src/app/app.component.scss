@@ -6,3 +6,14 @@ table{
   justify-content: flex-start !important;
   align-items: flex-start !important;
 }
+
+
+.form-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-vertical mat-form-field {
+  width: 100%;
+}
+

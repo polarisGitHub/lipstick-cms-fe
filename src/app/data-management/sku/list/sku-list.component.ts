@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
-import {SkuServiceService} from '../service/sku-service.service';
+import {SkuService} from '../service/sku.service';
 import {SkuListItem} from '../data/sku-list-item';
 import {PageSizeOption} from '../../../common/PageSizeOption';
 import {Page} from '../../../common/Page';
@@ -28,7 +28,7 @@ export class SkuListComponent implements OnInit {
 
   searchParam: SkuListSearchParam = new SkuListSearchParam();
 
-  constructor(private skuManagerService: SkuServiceService,
+  constructor(private skuManagerService: SkuService,
               private brandService: BrandService) {
   }
 

@@ -1,15 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {SkuListItem} from '../data/sku-list-item';
 import {PageResult} from '../../../common/PageResult';
 import {Page} from '../../../common/Page';
 import {SkuListSearchParam} from '../data/sku-list-search-param';
+import {SkuDetailItem} from '../data/sku-detail-item';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SkuServiceService {
+export class SkuService {
 
   constructor(private httpClient: HttpClient) {
   }
@@ -28,5 +29,9 @@ export class SkuServiceService {
     params = params.set('pageNo', String(page.pageNo));
     params = params.set('pageSize', String(page.pageSize));
     return this.httpClient.get<PageResult<SkuListItem>>('/api/lipstick/data-manager/sku/list', {params: params});
+  }
+
+  getById(id: number): Observable<SkuDetailItem> {
+    return this.httpClient.get<SkuDetailItem>(`/api/lipstick/data-manager/sku/detail/${id}`);
   }
 }

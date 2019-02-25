@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SkuServiceService } from './sku-service.service';
+import { SkuService } from './sku.service';
 
-describe('SkuServiceService', () => {
+describe('SkuService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: SkuServiceService = TestBed.get(SkuServiceService);
+    const service: SkuService = TestBed.get(SkuService);
     expect(service).toBeTruthy();
   });
 });

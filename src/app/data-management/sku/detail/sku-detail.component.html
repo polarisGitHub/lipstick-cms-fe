@@ -1,3 +1,60 @@
-<p>
-  sku-detail works!
-</p>
+<div *ngIf="data" class="form-vertical">
+  <mat-form-field>
+    <mat-label>品牌编号</mat-label>
+    <input matInput disabled [(ngModel)]="data.brandCode">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>产品编号</mat-label>
+    <input matInput disabled [(ngModel)]="data.goodsCode">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>商品编号</mat-label>
+    <input matInput disabled [(ngModel)]="data.skuCode">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>官网url</mat-label>
+    <input matInput [(ngModel)]="data.url">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>色号</mat-label>
+    <input matInput [(ngModel)]="data.colorNo">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="data.color1;then double else single"></mat-form-field>
+</div>
+
+<ng-template #single>
+  <mat-form-field>
+    <mat-label>色卡</mat-label>
+    <input matInput [(ngModel)]="data.color">
+    <div matSuffix style="width: 20px;height: 20px" [ngStyle]="{'background-color':data.color}"></div>
+  </mat-form-field>
+</ng-template>
+
+<ng-template #double>
+  <mat-label>色卡</mat-label>
+  <table cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput [(ngModel)]="data.color">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput [(ngModel)]="data.color1">
+          <div matSuffix>
+            <div style="width: 10px;height: 20px;display: inline-block"
+                 [ngStyle]="{'background-color':data.color}"></div>
+            <div style="width: 10px;height: 20px;display: inline-block"
+                 [ngStyle]="{'background-color':data.color1}"></div>
+          </div>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</ng-template>
