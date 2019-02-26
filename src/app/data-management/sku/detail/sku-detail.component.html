@@ -15,8 +15,13 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>官网url</mat-label>
-    <input matInput [(ngModel)]="data.url">
+    <mat-label>商品名称</mat-label>
+    <input matInput [(ngModel)]="data.skuName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>商品关键字</mat-label>
+    <input matInput [(ngModel)]="data.skuByName">
   </mat-form-field>
 
   <mat-form-field>
@@ -25,6 +30,27 @@
   </mat-form-field>
 
   <mat-form-field *ngIf="data.color1;then double else single"></mat-form-field>
+
+  <image-upload
+    url="/api/file/upload"
+    buttonCaption="首页图"
+    dropBoxMessage="拖拽上传"
+    clearButtonCaption="清除"
+    max="1"
+    [extensions]="['jpg','jpeg','png']"
+    [uploadedFiles]="figure"
+  >
+  </image-upload>
+
+  <image-upload
+    url="/api/file/upload"
+    buttonCaption="详情图"
+    dropBoxMessage="拖拽上传"
+    clearButtonCaption="清除"
+    [extensions]="['jpg','jpeg','png']"
+    [uploadedFiles]="detailImages"
+  >
+  </image-upload>
 </div>
 
 <ng-template #single>

@@ -12,6 +12,10 @@ export class SkuDetailComponent implements OnInit {
 
   data: SkuDetailItem;
 
+  figure: string[];
+
+  detailImages: string[];
+
   constructor(
     private skuService: SkuService,
     private activatedRoute: ActivatedRoute) {
@@ -19,7 +23,16 @@ export class SkuDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params) => {
-      this.skuService.getById(+params.get('id')).subscribe(l => this.data = l);
+      this.skuService.getById(+params.get('id')).subscribe(l => {
+        this.data = l;
+        this.figure = Array.from(['/image/' + l.figure]);
+        this.detailImages = [];
+        if (l.imgs) {
+          this.detailImages = l.imgs.map(i => {
+            return '/image/' + i;
+          });
+        }
+      });
     });
   }
 
