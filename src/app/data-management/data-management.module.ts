@@ -7,7 +7,7 @@ import {SkuListComponent} from './sku/list/sku-list.component';
 import {RouterModule} from '@angular/router';
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
   MatInputModule,
@@ -16,7 +16,7 @@ import {
   MatTableModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {ImageUploadModule} from 'angular2-image-upload';
+import {ImageUploadModule} from '../image-upload/image-upload.module';
 import {SkuDetailComponent} from './sku/detail/sku-detail.component';
 
 @NgModule({
@@ -38,7 +38,8 @@ import {SkuDetailComponent} from './sku/detail/sku-detail.component';
     MatIconModule,
     MatSelectModule,
     MatCardModule,
-    ImageUploadModule.forRoot(),
+    MatFormFieldModule,
+    ImageUploadModule,
     RouterModule.forChild([
       {path: 'brand', component: BrandComponent},
       {path: 'category', component: CategoryComponent},

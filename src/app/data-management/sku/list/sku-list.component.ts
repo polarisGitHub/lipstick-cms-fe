@@ -18,13 +18,13 @@ export class SkuListComponent implements OnInit {
 
   @ViewChild('paginator') paginator: MatPaginator;
 
-  private brands$: Observable<Brand[]>;
+  brands$: Observable<Brand[]>;
 
-  private dataSource: MatTableDataSource<SkuListItem> = new MatTableDataSource<SkuListItem>();
+  dataSource: MatTableDataSource<SkuListItem> = new MatTableDataSource<SkuListItem>();
 
-  private pageSizeOption: number[] = PageSizeOption.pageSize;
+  pageSizeOption: number[] = PageSizeOption.pageSize;
 
-  private totalCount: number;
+  totalCount: number;
 
   searchParam: SkuListSearchParam = new SkuListSearchParam();
 
