@@ -1,14 +1,14 @@
 .image-upload-overview {
-  padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .title-wrapper {
+  margin-bottom: 5px;
   font-family: inherit;
   font-weight: 400;
   font-size: 12px;
-  color: rgba(0, 0, 0, .54);
   line-height: 12px;
+  color: rgba(0, 0, 0, .54);
 }
 
 .image-wrapper {
@@ -18,12 +18,43 @@
   align-items: center;
 }
 
-.image-show-block {
-  display: inline-block;
-  margin: 6px;
+.block-border {
+  border: 1px dashed #d9d9d9;
 }
 
-.image-content {
+.block-border:hover {
+  border: 1px dashed dodgerblue;
+}
+
+.block-border-radius {
+  border-radius: 5px;
+}
+
+.image-show-block {
+  position: relative;
+  display: inline-block;
+  padding: 1px;
+  margin: 0 5px 5px 0;
+}
+
+.full-content {
   width: 100%;
   height: 100%;
+}
+
+.image-upload-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+}
+
+.image-show-action {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: 10;
+  transition: all .3s;
+  background: rgba(0, 0, 0, .5)
 }

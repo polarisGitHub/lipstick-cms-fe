@@ -19,8 +19,8 @@ export class ImageUploadComponent implements OnInit, OnChanges {
 
   @Input() title = '';
 
-  @Input() imageShowHeight = '100px';
-  @Input() imageShowWidth = '100px';
+  @Input() imageShowHeight = '120px';
+  @Input() imageShowWidth = '120px';
 
   @Input() beforeUpload: (metadata: UploadMetadata) => UploadMetadata | Promise<UploadMetadata> = metadata => metadata;
 
@@ -45,7 +45,10 @@ export class ImageUploadComponent implements OnInit, OnChanges {
   @Output() previewClicked = new EventEmitter<FileHolder>();
 
   @ViewChild('input') private inputElement: ElementRef;
+
   private pendingFilesCounter = 0;
+
+  private imageActionHidden = true;
 
   constructor(private imageService: ImageUploadService) {
   }
@@ -55,6 +58,10 @@ export class ImageUploadComponent implements OnInit, OnChanges {
       this.fileTooLargeMessage = 'An image was too large and was not uploaded.' + (this.maxFileSize ? (' The maximum file size is ' + this.maxFileSize / 1024) + 'KiB.' : '');
     }
     this.supportedExtensions = this.supportedExtensions ? this.supportedExtensions.map((ext) => 'image/' + ext) : ['image/*'];
+  }
+
+  setImageActionHidden(data: boolean): void {
+    this.imageActionHidden = data;
   }
 
   deleteAll() {
