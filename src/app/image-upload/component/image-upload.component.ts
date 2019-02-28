@@ -48,8 +48,6 @@ export class ImageUploadComponent implements OnInit, OnChanges {
 
   private pendingFilesCounter = 0;
 
-  private imageActionHidden = true;
-
   constructor(private imageService: ImageUploadService) {
   }
 
@@ -58,10 +56,6 @@ export class ImageUploadComponent implements OnInit, OnChanges {
       this.fileTooLargeMessage = 'An image was too large and was not uploaded.' + (this.maxFileSize ? (' The maximum file size is ' + this.maxFileSize / 1024) + 'KiB.' : '');
     }
     this.supportedExtensions = this.supportedExtensions ? this.supportedExtensions.map((ext) => 'image/' + ext) : ['image/*'];
-  }
-
-  setImageActionHidden(data: boolean): void {
-    this.imageActionHidden = data;
   }
 
   deleteAll() {

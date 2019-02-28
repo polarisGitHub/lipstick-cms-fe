@@ -14,11 +14,9 @@
   <div class="image-wrapper">
     <div class="image-show-block block-border block-border-radius" *ngFor="let file of files"
          [ngStyle]="{width:imageShowWidth,height:imageShowHeight}"
-         (mousemove)="setImageActionHidden(false)"
-         (mouseleave)="setImageActionHidden(true)"
     >
       <img class="full-content block-border-radius" [src]="file.src"/>
-      <div class="full-content image-show-action" [hidden]="imageActionHidden">
+      <div class="full-content image-action-show">
         <mat-icon style="color: white">visibility</mat-icon>
         <mat-icon style="color: white">delete_outline</mat-icon>
       </div>

@@ -50,11 +50,17 @@
   background-color: lightgray;
 }
 
-.image-show-action {
+.image-action-show {
+  opacity: 0;
   position: absolute;
   top: 0%;
   left: 0%;
   z-index: 10;
-  transition: all .3s;
-  background: rgba(0, 0, 0, .5)
+}
+
+
+.image-action-show:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, .5);
+  transition: background .5s;
 }
