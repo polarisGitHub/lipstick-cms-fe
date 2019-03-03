@@ -19,8 +19,8 @@ export class ImageUploadComponent implements OnInit, OnChanges {
 
   @Input() title = '';
 
-  @Input() imageShowHeight = '120px';
-  @Input() imageShowWidth = '120px';
+  @Input() imageShowHeightPx = 120;
+  @Input() imageShowWidthPx = 120;
 
   @Input() beforeUpload: (metadata: UploadMetadata) => UploadMetadata | Promise<UploadMetadata> = metadata => metadata;
 

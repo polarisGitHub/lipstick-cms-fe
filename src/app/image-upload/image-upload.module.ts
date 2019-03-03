@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ImageUploadComponent} from './component/image-upload.component';
 import {FileDropDirective} from './directive/file-drop.directive';
 import {ImageUploadService} from './service/image-upload.service';
-import {MatButtonModule, MatFormFieldModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatIconModule, MatTooltipModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,7 @@ import {MatButtonModule, MatFormFieldModule, MatIconModule} from '@angular/mater
     CommonModule,
     MatIconModule,
     MatButtonModule,
+    MatTooltipModule,
   ],
   exports: [ImageUploadComponent],
   providers: [ImageUploadService]

@@ -12,21 +12,24 @@
   </div>
 
   <div class="image-wrapper">
-    <div class="image-show-block block-border block-border-radius" *ngFor="let file of files"
-         [ngStyle]="{width:imageShowWidth,height:imageShowHeight}"
+    <div *ngFor="let file of files"
+         class="image-show-block block-border block-border-radius"
+         [style.width.px]="imageShowWidthPx"
+         [style.height.px]="imageShowHeightPx"
     >
-      <img class="full-content block-border-radius" [src]="file.src"/>
-      <div class="full-content image-action-show">
-        <mat-icon style="color: white">visibility</mat-icon>
-        <mat-icon style="color: white">delete_outline</mat-icon>
+      <img class=" full-content block-border-radius" [src]="file.src"/>
+      <div class="full-content image-action-show" [style.lineHeight.px]="imageShowHeightPx+12">
+        <mat-icon class="image-action-cursor" matTooltip="展示" (click)="showImage(file.src)">visibility</mat-icon>
+        <mat-icon class="image-action-cursor" matTooltip="删除" (click)="deleteImage(file.src)">delete_outline</mat-icon>
       </div>
     </div>
     <div class="image-show-block block-border block-border-radius" style="display: flex;flex-flow: column wrap;"
-         [ngStyle]="{width:imageShowWidth,height:imageShowHeight}" (click)="uploader.click()"
+         [style.width.px]="imageShowWidthPx"
+         [style.height.px]="imageShowHeightPx"
+         (click)="uploader.click()"
     >
-      <div class="image-upload-container block-border-radius full-content">
-        <mat-icon style="display: inline-block">add</mat-icon>
-        <span style="display: inline-block">上传图片</span>
+      <div class="image-upload-container block-border-radius full-content" [style.lineHeight.px]="imageShowHeightPx+12">
+        <mat-icon matTooltip="上传" style="cursor:pointer">add</mat-icon>
         <input #uploader type="file" style="display:none;"/>
       </div>
     </div>
