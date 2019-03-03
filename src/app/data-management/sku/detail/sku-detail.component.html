@@ -33,20 +33,19 @@
 
   <image-upload
     url="/api/file/upload"
-    dropBoxMessage="拖拽上传"
-    clearButtonCaption="清除"
+    title="首页图"
     max="1"
     [extensions]="['jpg','jpeg','png']"
-    [uploadedFiles]="figure"
+    [files]="figure"
   >
   </image-upload>
 
   <image-upload
     url="/api/file/upload"
-    dropBoxMessage="拖拽上传"
-    clearButtonCaption="清除"
+    title="详情图"
+    max="10"
     [extensions]="['jpg','jpeg','png']"
-    [uploadedFiles]="detailImages"
+    [files]="detailImages"
   >
   </image-upload>
 </div>

@@ -1,26 +1,21 @@
 <div
   fileDrop
   class="image-upload-overview"
-  [accept]="supportedExtensions"
-  (fileOver)="onFileOver($event)"
-  (fileDrop)="onFileChange($event)"
-  [ngClass]="{'img-ul-file-is-over': fileOver}"
-  [ngStyle]="style?.layout"
 >
   <div class="title-wrapper">
     {{title}}
   </div>
 
   <div class="image-wrapper">
-    <div *ngFor="let file of files"
+    <div *ngFor="let file of files;let i = index"
          class="image-show-block block-border block-border-radius"
          [style.width.px]="imageShowWidthPx"
          [style.height.px]="imageShowHeightPx"
     >
-      <img class=" full-content block-border-radius" [src]="file.src"/>
+      <img class=" full-content block-border-radius" [src]="file"/>
       <div class="full-content image-action-show" [style.lineHeight.px]="imageShowHeightPx+12">
-        <mat-icon class="image-action-cursor" matTooltip="展示" (click)="showImage(file.src)">visibility</mat-icon>
-        <mat-icon class="image-action-cursor" matTooltip="删除" (click)="deleteImage(file.src)">delete_outline</mat-icon>
+        <mat-icon class="image-action-cursor" matTooltip="展示" (click)="showImage(file)">visibility</mat-icon>
+        <mat-icon class="image-action-cursor" matTooltip="删除" (click)="deleteImage(i)">delete_outline</mat-icon>
       </div>
     </div>
     <div class="image-show-block block-border block-border-radius" style="display: flex;flex-flow: column wrap;"
