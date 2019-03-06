@@ -35,8 +35,9 @@
     url="/api/file/upload"
     title="首页图"
     max="1"
+    prefix="/image/"
     [extensions]="['jpg','jpeg','png']"
-    [files]="figure"
+    [files]="[data.figure]"
   >
   </image-upload>
 
@@ -44,8 +45,9 @@
     url="/api/file/upload"
     title="详情图"
     max="10"
+    prefix="/image/"
     [extensions]="['jpg','jpeg','png']"
-    [files]="detailImages"
+    [files]="data.imgs"
   >
   </image-upload>
 </div>

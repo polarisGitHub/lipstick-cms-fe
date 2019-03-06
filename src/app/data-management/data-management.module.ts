@@ -16,8 +16,8 @@ import {
   MatTableModule
 } from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {ImageUploadModule} from '../image-upload/image-upload.module';
 import {SkuDetailComponent} from './sku/detail/sku-detail.component';
+import {ImageUploadModule} from '../image-upload/image-upload.module';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,4 @@
-<div
-  fileDrop
-  class="image-upload-overview"
->
+<div class="image-upload-overview">
   <div class="title-wrapper">
     {{title}}
   </div>
@@ -12,7 +9,7 @@
          [style.width.px]="imageShowWidthPx"
          [style.height.px]="imageShowHeightPx"
     >
-      <img class=" full-content block-border-radius" [src]="file"/>
+      <img class=" full-content block-border-radius" [src]="prefix+file"/>
       <div class="full-content image-action-show" [style.lineHeight.px]="imageShowHeightPx+12">
         <mat-icon class="image-action-cursor" matTooltip="展示" (click)="showImage(file)">visibility</mat-icon>
         <mat-icon class="image-action-cursor" matTooltip="删除" (click)="deleteImage(i)">delete_outline</mat-icon>

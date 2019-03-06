@@ -1,7 +1,5 @@
 import {Component, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
-import {FileHolder} from '../../data/file-holder';
-import {ImageUploadService} from '../../service/image-upload.service';
-import {MatDialog, MatDialogRef} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {ImageShowDialogComponent} from '../image-show-dialog/image-show-dialog.component';
 
 @Component({
@@ -16,12 +14,12 @@ export class ImageUploadComponent implements OnInit, OnChanges {
   @Input() imageShowWidthPx = 120;
   @Input() max = 100;
   @Input() url: string;
+  @Input() prefix: string;
   @Input() files: string[];
   @Input('extensions') supportedExtensions: string[];
 
 
-  constructor(private imageService: ImageUploadService,
-              private dialog: MatDialog) {
+  constructor(private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
