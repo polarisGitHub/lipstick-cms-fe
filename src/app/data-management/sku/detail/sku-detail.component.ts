@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SkuDetailItem} from '../data/sku-detail-item';
 import {SkuService} from '../service/sku.service';
 import {ActivatedRoute, Params} from '@angular/router';
+import {FileUploadService} from '../../../common/file-upload/file-upload.service';
 
 @Component({
   selector: 'sku-detail',
@@ -15,7 +16,8 @@ export class SkuDetailComponent implements OnInit {
 
   constructor(
     private skuService: SkuService,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private fileUploadService: FileUploadService) {
   }
 
   ngOnInit() {
@@ -26,4 +28,15 @@ export class SkuDetailComponent implements OnInit {
     });
   }
 
+  uploadFigure(files: FileList) {
+    this.fileUploadService.upload(files).subscribe(l => {
+
+    });
+  }
+
+  uploadImages(files: FileList) {
+    this.fileUploadService.upload(files).subscribe(l => {
+
+    });
+  }
 }

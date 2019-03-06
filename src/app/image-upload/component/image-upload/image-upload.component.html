@@ -15,14 +15,17 @@
         <mat-icon class="image-action-cursor" matTooltip="删除" (click)="deleteImage(i)">delete_outline</mat-icon>
       </div>
     </div>
-    <div class="image-show-block block-border block-border-radius" style="display: flex;flex-flow: column wrap;"
+    <div *ngIf="files.length < max" class="image-show-block block-border block-border-radius"
+         style="display: flex;flex-flow: column wrap;"
          [style.width.px]="imageShowWidthPx"
          [style.height.px]="imageShowHeightPx"
          (click)="uploader.click()"
     >
       <div class="image-upload-container block-border-radius full-content" [style.lineHeight.px]="imageShowHeightPx+12">
         <mat-icon matTooltip="上传" style="cursor:pointer">add</mat-icon>
-        <input #uploader type="file" style="display:none;"/>
+        <input #uploader type="file" style="display:none;"
+               [attr.multiple]="multiple?'multiple':null"
+               (change)="inputChange($event.target.files)"/>
       </div>
     </div>
   </div>

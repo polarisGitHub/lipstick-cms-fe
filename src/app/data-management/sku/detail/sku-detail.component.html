@@ -38,6 +38,7 @@
     prefix="/image/"
     [extensions]="['jpg','jpeg','png']"
     [files]="[data.figure]"
+    (uploadFiles)="uploadFigure($event)"
   >
   </image-upload>
 
@@ -48,6 +49,7 @@
     prefix="/image/"
     [extensions]="['jpg','jpeg','png']"
     [files]="data.imgs"
+    (uploadFiles)="uploadImages($event)"
   >
   </image-upload>
 </div>
