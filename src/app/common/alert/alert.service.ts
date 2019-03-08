@@ -13,7 +13,7 @@ export class AlertService {
   public alert(color: string, data: any = ''): void {
     this.snackBar.openFromComponent(AlertTemplateComponent, {
       verticalPosition: 'top',
-      duration: 200000,
+      duration: 2000,
       panelClass: color,
       data: data
     });
