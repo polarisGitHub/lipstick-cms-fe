@@ -1,4 +1,4 @@
-table{
+table {
   width: 100%;
 }
 
@@ -7,13 +7,6 @@ table{
   align-items: flex-start !important;
 }
 
-
-.form-vertical {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-vertical mat-form-field {
+.full-width {
   width: 100%;
 }
-

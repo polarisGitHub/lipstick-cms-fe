@@ -14,7 +14,6 @@ export class ImageUploadComponent implements OnInit, OnChanges {
   @Input() imageShowHeightPx = 120;
   @Input() imageShowWidthPx = 120;
   @Input() max = 100;
-  @Input() url: string;
   @Input() prefix: string;
   @Input() files: string[];
   @Input('extensions') supportedExtensions: string[];

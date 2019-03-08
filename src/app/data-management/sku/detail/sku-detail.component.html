@@ -1,38 +1,39 @@
-<div *ngIf="data" class="form-vertical">
-  <mat-form-field>
-    <mat-label>品牌编号</mat-label>
-    <input matInput disabled [(ngModel)]="data.brandCode">
-  </mat-form-field>
+<form *ngIf="data">
+  <div class="full-width">
+    <mat-form-field style="width: 25%">
+      <input matInput disabled name="brandCode" placeholder="品牌编号" [(ngModel)]="data.brandCode">
+    </mat-form-field>
+    <mat-form-field style="width: 25%">
+      <input matInput disabled name="goodsCode" placeholder="产品编号" [(ngModel)]="data.goodsCode">
+    </mat-form-field>
+    <mat-form-field style="width: 25%">
+      <input matInput disabled name="skuCode" placeholder="商品编号" [(ngModel)]="data.skuCode">
+    </mat-form-field>
+  </div>
 
-  <mat-form-field>
-    <mat-label>产品编号</mat-label>
-    <input matInput disabled [(ngModel)]="data.goodsCode">
-  </mat-form-field>
+  <div class="full-width">
+    <mat-form-field style="width: 25%">
+      <input matInput name="skuName" placeholder="商品名称" [(ngModel)]="data.skuName">
+    </mat-form-field>
+  </div>
 
-  <mat-form-field>
-    <mat-label>商品编号</mat-label>
-    <input matInput disabled [(ngModel)]="data.skuCode">
-  </mat-form-field>
+  <div class="full-width">
+    <mat-form-field style="width: 25%">
+      <input matInput name="skuByName" placeholder="商品关键字" [(ngModel)]="data.skuByName">
+    </mat-form-field>
+  </div>
 
-  <mat-form-field>
-    <mat-label>商品名称</mat-label>
-    <input matInput [(ngModel)]="data.skuName">
-  </mat-form-field>
+  <div class="full-width">
+    <mat-form-field style="width: 25%">
+      <input matInput name="colorNo" placeholder="色号" [(ngModel)]="data.colorNo">
+    </mat-form-field>
+  </div>
 
-  <mat-form-field>
-    <mat-label>商品关键字</mat-label>
-    <input matInput [(ngModel)]="data.skuByName">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>色号</mat-label>
-    <input matInput [(ngModel)]="data.colorNo">
-  </mat-form-field>
-
-  <mat-form-field *ngIf="data.color1;then double else single"></mat-form-field>
+  <div class="full-width">
+    <div *ngIf="data.color1;then double else single"></div>
+  </div>
 
   <image-upload
-    url="/api/file/upload"
     title="首页图"
     max="1"
     prefix="/image/"
@@ -43,7 +44,6 @@
   </image-upload>
 
   <image-upload
-    url="/api/file/upload"
     title="详情图"
     max="10"
     prefix="/image/"
@@ -52,36 +52,26 @@
     (uploadFiles)="uploadImages($event)"
   >
   </image-upload>
-</div>
+
+  <button mat-flat-button color="primary" (click)="save()">保存</button>
+</form>
 
 <ng-template #single>
-  <mat-form-field>
-    <mat-label>色卡</mat-label>
-    <input matInput [(ngModel)]="data.color">
+  <mat-form-field style="width: 25%">
+    <input matInput name="color" placeholder="色卡" [(ngModel)]="data.color">
     <div matSuffix style="width: 20px;height: 20px" [ngStyle]="{'background-color':data.color}"></div>
   </mat-form-field>
 </ng-template>
 
 <ng-template #double>
-  <mat-label>色卡</mat-label>
-  <table cellspacing="0">
-    <tr>
-      <td>
-        <mat-form-field>
-          <input matInput [(ngModel)]="data.color">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field>
-          <input matInput [(ngModel)]="data.color1">
-          <div matSuffix>
-            <div style="width: 10px;height: 20px;display: inline-block"
-                 [ngStyle]="{'background-color':data.color}"></div>
-            <div style="width: 10px;height: 20px;display: inline-block"
-                 [ngStyle]="{'background-color':data.color1}"></div>
-          </div>
-        </mat-form-field>
-      </td>
-    </tr>
-  </table>
+  <mat-form-field style="width: 12.5%">
+    <input matInput name="color" placeholder="色卡1" [(ngModel)]="data.color">
+  </mat-form-field>
+  <mat-form-field style="width: 12.5%">
+    <input matInput name="color1" placeholder="色卡2" [(ngModel)]="data.color1">
+    <div matSuffix>
+      <div style="width: 10px;height: 20px;display: inline-block" [ngStyle]="{'background-color':data.color}"></div>
+      <div style="width: 10px;height: 20px;display: inline-block" [ngStyle]="{'background-color':data.color1}"></div>
+    </div>
+  </mat-form-field>
 </ng-template>
