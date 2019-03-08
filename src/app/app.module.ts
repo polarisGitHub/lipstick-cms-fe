@@ -5,24 +5,28 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MAT_LABEL_GLOBAL_OPTIONS,
   MatButtonModule, MatDividerModule,
   MatIconModule,
   MatPaginatorIntl,
-  MatSidenavModule,
+  MatSidenavModule, MatSnackBarModule,
   MatToolbarModule,
   MatTreeModule
 } from '@angular/material';
 import {CustomPaginator} from './common/CustomPaginator';
 import {LayoutModule} from '@angular/cdk/layout';
 import {NavComponent} from './nav/nav.component';
-import {httpInterceptorProviders} from './http-interceptor/interceptor-providers';
+import {httpInterceptorProviders} from './common/http-interceptor/interceptor-providers';
 import {HttpClientModule} from '@angular/common/http';
+import {AlertTemplateComponent} from './common/alert/alert-template/alert-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    AlertTemplateComponent,
+  ],
+  entryComponents: [
+    AlertTemplateComponent
   ],
   imports: [
     BrowserModule,
@@ -37,12 +41,12 @@ import {HttpClientModule} from '@angular/common/http';
     MatIconModule,
     MatTreeModule,
     MatDividerModule,
+    MatSnackBarModule,
     ///////////
   ],
   providers: [
     {provide: MatPaginatorIntl, useClass: CustomPaginator},
     httpInterceptorProviders,
-    // {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}}
   ],
   bootstrap: [AppComponent]
 })
