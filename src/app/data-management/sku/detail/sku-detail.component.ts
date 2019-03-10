@@ -3,6 +3,7 @@ import {SkuDetailItem} from '../data/sku-detail-item';
 import {SkuService} from '../service/sku.service';
 import {ActivatedRoute} from '@angular/router';
 import {FileUploadService} from '../../../common/file-upload/file-upload.service';
+import {AlertService} from '../../../common/alert/alert.service';
 
 @Component({
   selector: 'sku-detail',
@@ -17,7 +18,8 @@ export class SkuDetailComponent implements OnInit {
   constructor(
     private skuService: SkuService,
     private activatedRoute: ActivatedRoute,
-    private fileUploadService: FileUploadService) {
+    private fileUploadService: FileUploadService,
+    private alertService: AlertService) {
   }
 
   ngOnInit() {
@@ -45,6 +47,11 @@ export class SkuDetailComponent implements OnInit {
   }
 
   save(): void {
-
+    this.skuService.save(this.data).subscribe(l => {
+      if (l) {
+        this.alertService.alert('info', '保存成功');
+        window.location.reload();
+      }
+    });
   }
 }

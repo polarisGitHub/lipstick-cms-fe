@@ -34,4 +34,8 @@ export class SkuService {
   getById(id: number): Observable<SkuDetailItem> {
     return this.httpClient.get<SkuDetailItem>(`/api/lipstick/data-manager/sku/detail/${id}`);
   }
+
+  save(data: SkuDetailItem) {
+    return this.httpClient.put<string>('/api/lipstick/data-manager/sku/save', data);
+  }
 }
