@@ -6,10 +6,10 @@
   <div class="image-wrapper">
     <div *ngFor="let file of files;let i = index"
          class="image-show-block block-border block-border-radius"
+         [style.height.px]="imageShowWidthPx"
          [style.width.px]="imageShowWidthPx"
-         [style.height.px]="imageShowHeightPx"
     >
-      <img class=" full-content block-border-radius" [src]="prefix+file"/>
+      <img class=" full-content block-border-radius" style="object-fit: contain" [src]="prefix+file"/>
       <div class="full-content image-action-show" [style.lineHeight.px]="imageShowHeightPx+12">
         <mat-icon class="image-action-cursor" matTooltip="展示" (click)="showImage(file)">visibility</mat-icon>
         <mat-icon class="image-action-cursor" matTooltip="删除" (click)="deleteImage(i)">delete_outline</mat-icon>
